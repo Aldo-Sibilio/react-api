@@ -28,44 +28,19 @@ function App() {
 
   }, []); // array vuoto, viene eseguito solo al caricamento della pagina
 
+  return (
+    <div className="container py-4">
+      <h1 className="mb-4">Actors</h1>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      {/*lista delle card */}
+      <div className="row row-cols-1 row-cols-md-3 g-4">
+        {actors.map((actor) => (
+          <ActorCard key={actor.id} actor={actor} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 
 
