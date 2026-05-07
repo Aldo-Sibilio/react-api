@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import ActorCard from "./components/ActorCard.jsx";
+import "./ActorCardStyle.css";
+import "./App.css";
 
 function App() {
 
@@ -29,16 +31,26 @@ function App() {
   }, []); // array vuoto, viene eseguito solo al caricamento della pagina
 
   return (
-    <div className="container py-4">
-      <h1 className="mb-4">Actors</h1>
+    <>
+      {/* barra blu in alto */}
 
-      {/*lista delle card */}
-      <div className="row row-cols-1 row-cols-md-3 g-4">
-        {actors.map((actor) => (
-          <ActorCard key={actor.id} actor={actor} />
-        ))}
-      </div>
-    </div>
+      <header className="topbar">
+        Wonderful Cast
+      </header>
+
+      <div className="page-title">
+        <h1>Actors</h1>
+        <p>List of actors fetched from an API</p>
+
+
+        {/*lista delle card */}
+        <div className="row row-cols-1 row-cols-md-3 g-4">
+          {actors.map((actor) => (
+            <ActorCard key={actor.id} actor={actor} />
+          ))}
+        </div>
+      </div >
+    </>
   );
 }
 
